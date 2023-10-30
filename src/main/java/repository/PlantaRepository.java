@@ -19,5 +19,4 @@ public interface PlantaRepository extends JpaRepository<Planta, Integer> {
     // Método para encontrar plantas que son semillas
     List<Planta> findByEsSemillaTrue();
 
-    // Otros métodos personalizados que desees añadir
 }
