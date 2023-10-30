@@ -4,16 +4,19 @@
  */
 package repository;
 
-import com.spd.vivero.Datosbancarios;
-import com.spd.vivero.Planta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import com.spd.vivero.Planta;
 
-/**
- *
- * @author oscarloha
- */
+import java.util.List;
+
 @Repository
-public interface PlantaRepository extends JpaRepository<Planta, Integer>{
-    
+public interface PlantaRepository extends JpaRepository<Planta, Integer> {
+
+    // Método para encontrar plantas que no son semillas
+    List<Planta> findByEsSemillaFalse();
+
+    // Método para encontrar plantas que son semillas
+    List<Planta> findByEsSemillaTrue();
+
 }
